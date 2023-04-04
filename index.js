@@ -4,7 +4,7 @@ const cors = require("cors");
 
 const PORT = process.env.PORT || 3500;
 
-const guest_list = [
+let guest_list = [
   {
     id: 1,
     name: "Oscar Ivan Anillo",
@@ -24,7 +24,7 @@ app.get("/api/guests", (req, res) => {
 
 const generateId = () => {
   const maxId =
-    notes.length > 0 ? Math.max(...notes.map((item) => item.id)) : 0;
+    guest_list.length > 0 ? Math.max(...guest_list.map((item) => item.id)) : 0;
   return maxId + 1;
 };
 app.post("/api/guests", (req, res) => {
