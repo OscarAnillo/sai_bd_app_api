@@ -22,6 +22,15 @@ app.get("/api/guests", (req, res) => {
   res.json(guest_list);
 });
 
+app.get("/api/guests/:id", (req, res) => {
+  const id = Number(req.params.id);
+  const guestId = guest_list.find((guest) => guest.id === id);
+  if (guestId) {
+    res.json(guestId);
+  }
+  res.status(404).end();
+});
+
 const generateId = () => {
   const maxId =
     guest_list.length > 0 ? Math.max(...guest_list.map((item) => item.id)) : 0;
