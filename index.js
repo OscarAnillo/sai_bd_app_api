@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 3500;
 let guest_list = [
   {
     id: 1,
-    name: "Oscar Ivan Anillo",
+    content: "Oscar Ivan Anillo",
   },
 ];
 
